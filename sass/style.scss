@@ -1,0 +1,116 @@
+@charset 'UTF-8';
+//Paleta De Cores:
+$bodyCollor:#191919;
+$borderCanva:#346856;
+$textBody:#346856;
+$fundoGame:#D0F4B8;
+
+
+@font-face {
+    font-family: GameBoy;
+    src: url(../early_gameboy/Early\ GameBoy.ttf);
+}
+
+
+
+*{ margin: 0; padding: 0; box-sizing: border-box; font-family: GameBoy; }
+
+body{
+    background-color: $bodyCollor ;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color:$textBody ;
+    text-shadow: 2px 0px 0px #081820;
+}
+#pelicula{
+    display: flex;
+    width: 390px;
+    height: 425px;
+
+    border-radius: 10px 10px 40px 10px;
+    
+    align-items: center;
+    justify-items: center;
+    background-color: gray;
+ 
+    justify-content: center;
+}
+#tela{
+    
+    width: 320px;
+    height: 368px;
+    background-color: $fundoGame;
+    
+}
+canvas{
+    border: 10px solid $borderCanva ;
+    background-color: $fundoGame;
+    width: 320px;
+    height: 310px;
+    filter: blur(0px);
+    
+}
+.screenBlack{
+    display: none;
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background-color: #191919c2;
+    z-index: 1;
+}
+.point{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.level{
+    margin-right: 65px;
+}
+.score , .level{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.3rem;
+}
+.score-value , .level-value{
+    font-weight: 700;
+    font-size: 2.5rem;
+    display: block;
+    margin-top: -10px;
+}
+.menu-screen{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+.game-over{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 2rem;
+}
+.final-score{
+    font-weight: 500;
+    font-size: 1.5rem;
+
+}
+
+.bnt-play{
+    border: none;
+    border-radius: 100px;
+    padding: 10px 15px 10px 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+}
+.left>span{ rotate: 180deg;} .down>span{rotate: 90deg} .up>span{rotate: 270deg;}
