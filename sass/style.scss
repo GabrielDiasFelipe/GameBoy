@@ -16,19 +16,29 @@ $fundoGame:#D0F4B8;
 *{ margin: 0; padding: 0; box-sizing: border-box; font-family: GameBoy; }
 
 body{
-    background-color: $bodyCollor ;
     display: flex;
+    background-color: #191919;
     min-height: 100vh;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    color:$textBody ;
+    color: #346856;
     text-shadow: 2px 0px 0px #081820;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+#gameboy{
+    display: flex;
+    width: 400px;
+    height: 95vh;
+    background-color: #346856;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
 }
 #pelicula{
     display: flex;
-    width: 390px;
-    height: 425px;
+    width: 350px;
+    height: 325px;
 
     border-radius: 10px 10px 40px 10px;
     
@@ -40,24 +50,25 @@ body{
 }
 #tela{
     
-    width: 320px;
-    height: 368px;
+    width: 260px;
+    height: 260px;
     background-color: $fundoGame;
     
 }
 canvas{
     border: 10px solid $borderCanva ;
     background-color: $fundoGame;
-    width: 320px;
-    height: 310px;
+    width: 260px;
+    height: 210px;
     filter: blur(0px);
     
 }
 .screenBlack{
     display: none;
     position: absolute;
-    width: 450px;
-    height: 450px;
+    width: 260px;
+    padding-top: 120px;
+    height: 217px;
     background-color: #191919c2;
     z-index: 1;
 }
@@ -66,36 +77,41 @@ canvas{
     flex-direction: row-reverse;
 }
 .level{
-    margin-right: 65px;
+    margin-right: 60px;
 }
 .score , .level{
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 .score-value , .level-value{
     font-weight: 700;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     display: block;
-    margin-top: -10px;
+    margin-top: 0px;
 }
 .menu-screen{
     position: absolute;
     display: none;
+    width: 259px;
+    height: 217px;
     flex-direction: column;
     align-items: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+
     z-index: 2;
 }
 
 .game-over{
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 .final-score{
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 1rem;
 
 }
 
@@ -103,7 +119,7 @@ canvas{
     border: none;
     border-radius: 100px;
     padding: 10px 15px 10px 12px;
-    font-size: 1rem;
+    font-size: .8rem;
     font-weight: 600;
     color: #333;
     margin-top: 40px;
@@ -113,4 +129,41 @@ canvas{
     gap: 5px;
     cursor: pointer;
 }
-.left>span{ rotate: 180deg;} .down>span{rotate: 90deg} .up>span{rotate: 270deg;}
+.menu-button{ 
+    position: relative;
+    width: 120px;
+    height: 120px;
+    
+    button{
+        background-color: #081820;
+        position: absolute;
+        padding: 5px;
+    }
+
+        .material-symbols-outlined{
+            color: white;
+        }
+
+}
+.right{
+    
+    top: 50%;
+    left: 70%;
+    transform: translateY(-50%);
+}
+.left{
+    top: 50%;
+    transform: translateY(-50%);
+    span{ rotate: 180deg;
+    }
+}
+ .down{
+    top: 100%;
+    left:35%;
+    transform: translateY(-100%);
+    span{rotate: 90deg}
+} 
+ .up{
+    left:35%;
+    span{rotate: 270deg;}
+}

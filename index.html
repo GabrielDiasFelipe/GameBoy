@@ -9,49 +9,51 @@
 </head>
 <body> 
 
-    <div id="pelicula">
-        <div id="tela">
-            <div class="point">
-                <div class="score">Score: <span class="score-value">00</span></div>
-                <div class="level">Level <span class="level-value">00</span></div>
+    <div id="gameboy">
+        <div id="pelicula">
+            <div id="tela">
+                <div class="point">
+                    <div class="score">Score: <span class="score-value">00</span></div>
+                    <div class="level">Level: <span class="level-value">00</span></div>
+                </div>
+        
+                <div class="menu-screen">
+                    <span class="game-over">Game Over</span>
+                    <span class="final-score">Score <span>00</span></span>
+                    <button class="bnt-play" onclick="Reiniciar()">
+                        Jogar Novamente
+                    </button>
+                </div>
+                <div class="screen">
+                    <div class="screenBlack"></div>
+                    <canvas class="canvas" width="240" height="160"></canvas>
+                </div>
             </div>
         
-            <div class="menu-screen">
-                <span class="game-over">Game Over</span>
-                <span class="final-score">Score <span>00</span></span>
-                <button class="bnt-play" onclick="Reiniciar()">
-                    Jogar Novamente
+        </div>
+        <div class="menu-button">
+                <button class="left" >
+                    <span class="material-symbols-outlined">
+                    arrow_right
+                    </span>
                 </button>
+                <button class="right" >
+                    <span class="material-symbols-outlined">
+                    arrow_right
+                    </span>
+                </button>
+                <button class="up" >
+                    <span class="material-symbols-outlined">
+                    arrow_right
+                    </span>
+                </button>
+                <button class ='down' >
+                    <span class="material-symbols-outlined">
+                    arrow_right
+                    </span>
+                </button >
             </div>
-            <div class="screen">
-                <div class="screenBlack"></div>
-                <canvas class="canvas" width="600" height="600"></canvas>
-            </div>
-        </div>
-       
-    </div> 
-    <div class="menu-button">
-            <button class="left" >
-                <span class="material-symbols-outlined">
-                arrow_right
-                </span>
-            </button>
-            <button class="right" >
-                <span class="material-symbols-outlined">
-                arrow_right
-                </span>
-            </button>
-            <button class="up" >
-                <span class="material-symbols-outlined">
-                arrow_right
-                </span>
-            </button>
-            <button class ='down' >
-                <span class="material-symbols-outlined">
-                arrow_right
-                </span>
-            </button >
-        </div>
+    </div>
 
     <script src="JavaScript\script.js"></script>
 </body>

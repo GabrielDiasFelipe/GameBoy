@@ -21,9 +21,9 @@ const finalScore = document.querySelector('.final-score > span')
 const menu = document.querySelector('.menu-screen')
 const buttonPlay = document.querySelector('.btn-play')
 
-const size = 30
+const size = 10
 
-let snake = [{ x:270, y:240}]
+let snake = [{ x:120, y:80}]
 
 const incrementScore = (()=>{
     score.innerText = +score.innerText + 10
@@ -48,8 +48,8 @@ const randowNumber = (min,max) =>{
     return Math.round( Math.random() * (max - min) + min)
  }
  const rPosition = () => {
-    const number = randowNumber(0 , 570)
-    return  Math.round(number / 30 ) * 30
+    const number = randowNumber(0 , 150)
+    return  Math.round(number / 10 ) * 10
  }
 
  const rColor = () => {
@@ -78,7 +78,7 @@ const drawFood = () =>{
     ctx.shadowOffsetX = 0;
     ctx.shadowOffsetY = 0;
     ctx.fillStyle = colorFood
-    ctx.fillRect(x ,y ,(size) , (size))
+    ctx.fillRect(x ,y ,12 , 10)
     ctx.shadowBlur = 0
     ctx.shadowOffsetX = 0;
     ctx.shadowOffsetY = 0;
@@ -131,15 +131,15 @@ const drawGrid =  () => {
     ctx.lineWidth = 1;
     ctx.strokeStyle = colorGrid
     
-    for (let i = 30; i < 600 ; i += 30){
+    for (let i = 10; i < 240 ; i += 10){
         ctx.beginPath()
         ctx.lineTo(i,0)
-        ctx.lineTo(i,600)
+        ctx.lineTo(i,160)
         ctx.stroke()
 
         ctx.beginPath()
         ctx.lineTo(0,i)
-        ctx.lineTo(600,i)
+        ctx.lineTo(240,i)
         ctx.stroke()
     }
        
@@ -167,9 +167,9 @@ const checkEat =() => {
 
 const checkCollision = () => {
     const head = snake[snake.length-1]
-    const canvasLimit = 570
+    const canvasLimit = 230
     const neckIndex = snake.length -2
-    const wallCollision =  head.x < 0 || head.x > canvasLimit || head.y < 0 || head.y > canvasLimit
+    const wallCollision =  head.x < 0 || head.x > canvasLimit || head.y < 0 || head.y > 150
 
     const selfCollision = snake.find((position , index) => {return index < neckIndex && position.x ==head.x && position.y == head.y})
 
@@ -190,7 +190,7 @@ const gameOver = (() =>{
 })
 const gameLoop= (() => {
     clearInterval(loopId)
-    ctx.clearRect(0,0 , 600 ,600)
+    ctx.clearRect(0,0 , 240 ,160)
     moveSnake()
 
     drawGrid()
@@ -216,7 +216,7 @@ document.addEventListener('keydown', ({key})=>{
         minScore = 60
         vel = 250
         menu.style.display = 'none'
-        snake = [{ x:270, y:240}]
+        snake = [{ x:120, y:80}]
         document.querySelector('.screenBlack').style.display='none'
     
 
