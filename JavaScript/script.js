@@ -264,3 +264,15 @@ function commandClick(key){
         }
     }
 }
+
+
+function range(){
+    const range = document.getElementById('zoom-range');
+    range.addEventListener('mousemove',
+    function(){  
+        document.getElementById('range-number').innerHTML=range.value
+        document.getElementById('gameboy').style.zoom =`${range.value}%`
+    }
+        )
+
+}

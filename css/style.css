@@ -26,8 +26,10 @@ body {
 
 #gameboy {
   display: flex;
-  width: 400px;
+  width: max(400px, 15vw);
   height: 95vh;
+  max-height: 650px;
+  margin: 20px;
   background-color: #C6C1BD;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -55,96 +57,6 @@ body {
   width: 260px;
   height: 260px;
   background-color: #D0F4B8;
-}
-
-canvas {
-  border: 10px solid #346856;
-  background-color: #D0F4B8;
-  width: 260px;
-  height: 210px;
-  filter: blur(0px);
-}
-
-.screenShadow {
-  position: absolute;
-  top: 0%;
-  width: 260px;
-  padding-top: 120px;
-  height: 261px;
-  background-color: transparent;
-  box-shadow: inset 0px 0px 9px 0px rgba(0, 0, 0, 0.6705882353);
-  z-index: 1;
-}
-
-.screenBlack {
-  display: none;
-  position: absolute;
-  width: 260px;
-  padding-top: 120px;
-  height: 210px;
-  background-color: rgba(25, 25, 25, 0.7607843137);
-  z-index: 1;
-}
-
-.point {
-  display: flex;
-  flex-direction: row-reverse;
-}
-
-.level {
-  margin-right: 60px;
-}
-
-.score, .level {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 1rem;
-}
-
-.score-value, .level-value {
-  font-weight: 700;
-  font-size: 1.5rem;
-  display: block;
-  margin-top: 0px;
-}
-
-.menu-screen {
-  position: absolute;
-  display: none;
-  width: 259px;
-  height: 217px;
-  flex-direction: column;
-  align-items: center;
-  flex-wrap: nowrap;
-  justify-content: center;
-  z-index: 2;
-}
-
-.game-over {
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 1rem;
-}
-
-.final-score {
-  font-weight: 500;
-  font-size: 1rem;
-}
-
-.bnt-play {
-  border: none;
-  border-radius: 100px;
-  padding: 10px 15px 10px 12px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #333;
-  margin-top: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  cursor: pointer;
 }
 
 .bnt-controler {
@@ -301,6 +213,153 @@ canvas {
   outline: thin dotted;
   outline: 0px auto -webkit-focus-ring-color;
   outline-offset: 0px;
+}
+
+canvas {
+  border: 10px solid #346856;
+  background-color: #D0F4B8;
+  width: 260px;
+  height: 210px;
+  filter: blur(0px);
+}
+
+.screenShadow {
+  position: absolute;
+  top: 0%;
+  width: 260px;
+  padding-top: 120px;
+  height: 261px;
+  background-color: transparent;
+  box-shadow: inset 0px 0px 9px 0px rgba(0, 0, 0, 0.6705882353);
+  z-index: 1;
+}
+
+.screenBlack {
+  display: none;
+  position: absolute;
+  width: 260px;
+  padding-top: 120px;
+  height: 210px;
+  background-color: rgba(25, 25, 25, 0.7607843137);
+  z-index: 1;
+}
+
+.point {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.level {
+  margin-right: 60px;
+}
+
+.score, .level {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.score-value, .level-value {
+  font-weight: 700;
+  font-size: 1.5rem;
+  display: block;
+  margin-top: 0px;
+}
+
+.menu-screen {
+  position: absolute;
+  display: none;
+  width: 259px;
+  height: 217px;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+  z-index: 2;
+}
+
+.final-score {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.game-over {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.bnt-play {
+  border: none;
+  border-radius: 100px;
+  padding: 10px 15px 10px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #333;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+html, body {
+  overflow: hidden;
+}
+
+#gameboy {
+  zoom: 19%;
+}
+
+.Zoom {
+  width: 100px;
+  height: 200px;
+  position: absolute;
+  top: 85%;
+  left: 1%;
+}
+.Zoom p {
+  position: absolute;
+  width: 120px;
+  top: -35%;
+  left: 20%;
+  font-size: 13px;
+}
+.Zoom #zoom-range {
+  transform: rotate(-90deg);
+}
+
+#zoom-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 10px;
+  background: #C6C1BD;
+  outline: #9C2158;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  border-radius: 2px;
+}
+
+#zoom-range {
+  opacity: 1;
+}
+#zoom-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #9C2158;
+  border-radius: 2px;
+  cursor: pointer;
+}
+#zoom-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */
