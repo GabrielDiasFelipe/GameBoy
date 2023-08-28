@@ -12,9 +12,9 @@
     display: none;
     position: absolute;
     width: 260px;
-    padding-top: 120px;
-    height: 210px;
-    background-color: #191919c2;
+    top: 0%;
+    height:100%;
+    background-color: #346856a8;
     z-index: 1;
 }
 //Menu:
@@ -46,6 +46,8 @@
     align-items: center;
     flex-wrap: nowrap;
     justify-content: center;
+    color:rgb(0, 0, 0);
+    text-shadow:0px 2px 0px rgb(255 255 255 / 15%);
 
     z-index: 2;
 }
@@ -54,11 +56,13 @@
     display: none;
     width: 259px;
     height: 217px;
+    padding-bottom: 20px;
     flex-direction: column;
     align-items: center;
     flex-wrap: nowrap;
     justify-content: center;
-
+    color:black;
+    text-shadow:0px 2px 0px rgb(255 255 255 / 15%);
     z-index: 2;
     .bnt-return{
         background-color: transparent;
@@ -75,7 +79,7 @@
 .material-symbols-outlined {
     font-size: 40px;
     text-shadow: 2px 1px 0px #0000007d;
-    color:$borderCanva;
+    color:black;
   }
 }
 .final-score{

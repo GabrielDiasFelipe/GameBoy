@@ -8,10 +8,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <body> 
-    <div class="Zoom">
-        <p>Zoom: <strong id="range-number">100</strong></p>
-        <input type="range" min="1" max="200" value="100" id="zoom-range" onmouseup="range()">
-      </div>
 
     <div id="gameboy">
         <div id="pelicula">
@@ -29,6 +25,8 @@
                     </button>
                 </div>
                 <div class="menu-paused">
+                    
+                    <img src="snake-logo.png" alt="snake-logo" width="200px">
                     <span class="paused">Paused</span>
                     <span class="score-paused">Score <span>00</span></span>
                     <button class="bnt-return" onclick="paused()">
