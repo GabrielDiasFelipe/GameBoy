@@ -19,6 +19,7 @@ const level = document.querySelector('.level-value')
 
 const finalScore = document.querySelector('.final-score > span')
 const menu = document.querySelector('.menu-screen')
+const menuPaused = document.querySelector('.menu-paused')
 const buttonPlay = document.querySelector('.btn-play')
 
 const size = 10
@@ -65,6 +66,7 @@ const food ={
 }
 
 let direção 
+let savedirection 
 let loopId
 
 const drawFood = () =>{
@@ -188,6 +190,27 @@ const gameOver = (() =>{
     document.querySelector('.screenBlack').style.display='block'
    
 })
+
+function paused(){
+
+
+    if( menu.style.display !== "flex"){
+           if(menuPaused.style.display !== "flex"){
+    savedirection = direção
+    menuPaused.style.display = "flex"
+    console.log(savedirection)
+    direção = undefined
+
+    document.querySelector('.score-paused > span').innerText = score.innerText
+    document.querySelector('.screenBlack').style.display='block'
+}else{
+    direção = savedirection
+    menuPaused.style.display = "none"
+    document.querySelector('.screenBlack').style.display='none'
+}
+     
+    }
+}
 const gameLoop= (() => {
     clearInterval(loopId)
     ctx.clearRect(0,0 , 240 ,160)
@@ -229,11 +252,17 @@ document.addEventListener('keydown', ({key})=>{
 }
 
 document.addEventListener('keydown', ({key})=>{
+    console.log(key)
     if(menu.style.display == "flex"){
     if(key == "Enter" ){
         Reiniciar()
-    }}    
-})
+    }}
+        if(key == "p" ){
+            paused()
+        }})
+    
+    
+
 document.getElementsByClassName('left')[0].addEventListener('click',({key}) =>{
     command = "ArrowLeft"
     commandClick(command)
@@ -252,7 +281,7 @@ document.getElementsByClassName('down')[0].addEventListener('click',({key}) =>{
 })
 
 function commandClick(key){
-    if(menu.style.display !== "flex"){
+    if(menu.style.display !== "flex" && menuPaused.style.display !== "flex"){
         if(key == "ArrowRight" && direção != 'left'){
          direção = "right"
         }else if(key == "ArrowLeft"  && direção != 'right'){

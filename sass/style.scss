@@ -35,11 +35,12 @@ body{
 @import 'canva';
 @import 'snake-game';
 
+body{height: 100vh;}
 html, body {
     overflow: hidden;
 }
 #gameboy{
-    zoom: 19%;
+    zoom: 100%;
 }
 
 
